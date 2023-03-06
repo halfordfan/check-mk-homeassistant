@@ -25,7 +25,6 @@ try:
   soup=BeautifulSoup(response.text.replace('\r','').replace('\n','').replace('\t',''), "html.parser")
   table = soup.find('table')
   statrows = table.find_all('tr')
-  statuses={}
 except:
   exit(0)
 
