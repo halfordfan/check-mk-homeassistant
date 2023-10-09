@@ -16,7 +16,7 @@ A Check MK plug in for homeassistant.  This is primarily targeted at HAOS instal
   * Set up monitoring via SSH as in this thread:
     https://forum.checkmk.com/t/homeassistant-monitoring-plugin/36753
   * Add this agent after the SSH commandline separated by a semi-colon and append the option `local` as below:
-    `ssh -T siteuser@$hostname$ /config/check_mk_agent; check_haobserver.py $HOSTNAME$ local`
+    `ssh -T siteuser@$HOSTNAME$ /config/check_mk_agent; check_haobserver.py $HOSTNAME$ local`
   * Perform service discovery
 
 # Monitored services
