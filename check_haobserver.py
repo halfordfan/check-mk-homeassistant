@@ -19,6 +19,7 @@ else:
   print('<<<check_mk>>>')
   print('Version: 1.0')
   print('AgentOS: HomeAssistant')
+  print('<<<local>>>')
 
 try:
   response=requests.get('http://' + sys.argv[1] + ':4357/')
