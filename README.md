@@ -3,7 +3,7 @@ A Check MK plug in for homeassistant.  This is primarily targeted at HAOS instal
 
 # Installation
 * Log into Check MK as your site user
-* `pip3 install beautifulsoup`
+* `pip3 install beautifulsoup4`
 * Install this plug-in into `~/local/bin`
 
 # Then pick **one** of the following two configuration options:
