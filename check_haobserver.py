@@ -6,12 +6,20 @@
 # is frought with peril.
 
 from bs4 import BeautifulSoup
+import socket
 import requests
 import sys
 
 if len(sys.argv) == 1:
-  print('USAGE: ' + sys.argv[0] + ' hostname [local]')
-  exit(0)
+  print('USAGE: ' + sys.argv[0] + ' hostname [local]',file=sys.stderr)
+  exit(1)
+
+# Verify host specification
+try:
+  socket.getaddrinfo(sys.argv[1],"8123")
+except:
+  print('Invalid host specification (name or IP)',file=sys.stderr)
+  exit(1);
 
 if len(sys.argv) > 2 and sys.argv[2] == 'local':
   print('<<<local>>>')
@@ -27,7 +35,8 @@ try:
   table = soup.find('table')
   statrows = table.find_all('tr')
 except:
-  exit(0)
+  print('Unable to collect data from HAobserver',file=sys.stderr)
+  exit(1)
 
 for row in statrows:
   #print(row)
@@ -49,3 +58,4 @@ for row in statrows:
     nicestatus="Unknown"
     perf=' - '
   print(code + ' ' + service + perf + service + ' reports ' + nicestatus)
+exit(0)
