@@ -57,5 +57,5 @@ for row in statrows:
     code='3'
     nicestatus="Unknown"
     perf=' - '
-  print(code + ' "HA ' + service + '"' + perf + service + ' reports ' + nicestatus)
+  print(code + ' "Home Assistant ' + service + '"' + perf + service + ' reports ' + nicestatus)
 exit(0)
