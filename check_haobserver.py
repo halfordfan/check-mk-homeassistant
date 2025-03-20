@@ -40,7 +40,7 @@ except:
 
 for row in statrows:
   #print(row)
-  service=row.find('td', {'class': []}).contents[0].string.strip().replace(':','')
+  service=row.find('td').contents[0].string.strip().replace(':','')
   try:
     status=row.find('td', {'class': ['connected','disconnected']})
     if status.attrs['class'][0] == 'connected':
